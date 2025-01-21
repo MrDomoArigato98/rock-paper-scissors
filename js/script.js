@@ -10,6 +10,7 @@ const result = document.createElement("p");
 const round = document.createElement("p");
 result.setAttribute("style","display:flex;")
 round.setAttribute("style","display:flex;")
+
 let btns = document.querySelector("#buttons");
 btns.addEventListener('click',(event)=>{
     let target = event.target;
@@ -81,14 +82,17 @@ function playRound(playerSelection,computerSelection){
         humanScore ++;
         result.textContent = "Human " +humanScore +" Vs  PC "+ computerScore
     }
+
+    if(isGameOver()){
+    }
 }
 
 function isGameOver(){
-    if(humanScore>=5){
+    if(humanScore==5){
         result.textContent= "Game is over. Human wins! FATALITY. "+humanScore + " to " + computerScore
         round.remove();
         return true;
-    }else if(computerScore>=5){
+    }else if(computerScore==5){
         result.textContent= "Game is over. Computer wins! FATALITY. "+computerScore + " to " + humanScore
         round.remove();
         return true;
@@ -99,23 +103,3 @@ function isGameOver(){
 
 dashboard.appendChild(result);
 dashboard.appendChild(round);
-
-/*  
-
-*/
-
-/*
-let checkIfEnd = () => {if (humanScore==5 || computerScore==5){
-
-}
-*/
-
-
-/*
-if(humanScore>computerScore){
-    console.log("Human wins with : " + humanScore + " wins against " + computerScore)
-}else if(humanScore<computerScore){
-    console.log("Computer wins with : " + computerScore + " wins against " + humanScore)
-}else{
-    console.log("Draw between human and computer with : " + computerScore + " wins against " + humanScore)
-}*/
