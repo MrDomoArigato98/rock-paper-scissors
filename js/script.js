@@ -42,6 +42,12 @@ function getComputerSelection(){
 computerSelection = getComputerSelection();
 
 
+let dashboard = document.querySelector("#dashboard");
+const result = document.createElement("p");
+result.textContent = "Human won"
+dashboard.appendChild(result);
+
+
 /*
 let checkIfEnd = () => {if (humanScore==5 || computerScore==5){
 
