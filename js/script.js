@@ -1,8 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
-let humanHand;
-let computerHand;
 
+let computerSelection;
 let playerSelection;
 
 let btns = document.querySelector("#buttons");
@@ -40,15 +39,16 @@ function getComputerSelection(){
     return computerSelection;
 }
 
+computerSelection = getComputerSelection();
+
+
 /*
+let checkIfEnd = () => {if (humanScore==5 || computerScore==5){
 
-    
+}
+*/
 
-    humanHand = getHumanHand();
-    computerHand = getComputerHand();
-    
-    humanHand = humanHand.toLowerCase();
-    
+/*  
     function playRound(humanHand,computerHand){
         if (humanHand==computerHand){
             console.log(humanHand +" Vs " + computerHand)
