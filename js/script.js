@@ -3,8 +3,24 @@ let computerScore = 0;
 let humanHand;
 let computerHand;
 
-for (let index = 0; index <5; index++) {
+let btns = document.querySelector("#buttons");
+btns.addEventListener('click',(event)=>{
+    let target = event.target;
 
+    switch(target.id){
+        case 'rock':
+            alert('Rock pressed');
+            break;
+        case 'paper':
+            alert('Paper pressed');
+            break;
+        case 'scissors':
+            alert('scissors pressed');
+        break;
+        }
+});
+
+/*
     function getHumanHand(){
         let humanHand = prompt("What hand are you throwing? Rock, Paper, or scissors?")
         return humanHand;
@@ -52,8 +68,8 @@ for (let index = 0; index <5; index++) {
             humanScore ++;
         }
     }
-    playRound(humanHand,computerHand)
-}
+playRound(humanHand,computerHand)
+
 
 if(humanScore>computerScore){
     console.log("Human wins with : " + humanScore + " wins against " + computerScore)
@@ -61,4 +77,4 @@ if(humanScore>computerScore){
     console.log("Computer wins with : " + computerScore + " wins against " + humanScore)
 }else{
     console.log("Draw between human and computer with : " + computerScore + " wins against " + humanScore)
-}
+}*/
