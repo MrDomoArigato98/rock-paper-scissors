@@ -3,6 +3,8 @@ let computerScore = 0;
 let humanHand;
 let computerHand;
 
+let playerSelection;
+
 let btns = document.querySelector("#buttons");
 btns.addEventListener('click',(event)=>{
     let target = event.target;
@@ -10,36 +12,37 @@ btns.addEventListener('click',(event)=>{
     switch(target.id){
         case 'rock':
             alert('Rock pressed');
+            playerSelection='rock';
             break;
         case 'paper':
             alert('Paper pressed');
+            playerSelection='paper';
             break;
         case 'scissors':
             alert('scissors pressed');
+            playerSelection='scissors';
         break;
         }
 });
 
-/*
-    function getHumanHand(){
-        let humanHand = prompt("What hand are you throwing? Rock, Paper, or scissors?")
-        return humanHand;
+function getComputerSelection(){
+    computerInt = Math.floor(Math.random() * 3);
+    if (computerInt==0){
+        computerSelection = "rock"
+        console.group(computerSelection)
+    }else if(computerInt==1){
+        computerSelection = "paper"
+        console.group(computerSelection)
+    }else if(computerInt==2){
+        computerSelection = "scissors"
+        console.group(computerSelection)
     }
+    return computerSelection;
+}
 
-    function getComputerHand(){
-        computerInt = Math.floor(Math.random() * 3);
-        if (computerInt==0){
-            computerHand = "rock"
-            console.group(computerHand)
-        }else if(computerInt==1){
-            computerHand = "paper"
-            console.group(computerHand)
-        }else if(computerInt==2){
-            computerHand = "scissors"
-            console.group(computerHand)
-        }
-        return computerHand;
-    }
+/*
+
+    
 
     humanHand = getHumanHand();
     computerHand = getComputerHand();
